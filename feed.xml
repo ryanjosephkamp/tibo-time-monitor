@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tibo Time Monitor</title>
+    <link>https://ryanjosephkamp.github.io/tibo-time-monitor/</link>
+    <description>State-changing Codex / ChatGPT Work reset signals from @thsottiaux. Heartbeats are not included.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2026 20:41:00 GMT</lastBuildDate>
+    <item>
+      <title>INACTIVE: Banked resets re-issued after a morning apply failure</title>
+      <link>https://x.com/thsottiaux/status/2097752790177370535</link>
+      <guid isPermaLink="true">https://x.com/thsottiaux/status/2097752790177370535</guid>
+      <pubDate>Wed, 09 Sep 2026 18:23:34 GMT</pubDate>
+      <description>Tibo said some banked resets did not fully apply this morning on ChatGPT Work and Codex. Affected users are getting another banked reset and an apology email. Banked-only events do not turn Tibo Time on.</description>
+    </item>
+  </channel>
+</rss>

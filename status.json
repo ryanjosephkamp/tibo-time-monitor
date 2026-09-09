@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "tibo_time": "INACTIVE",
+  "event_kind": "banked_credit",
+  "event_stage": "source_completed",
+  "headline": "Banked resets re-issued after a morning apply failure",
+  "summary": "Tibo said some banked resets did not fully apply this morning on ChatGPT Work and Codex. Affected users are getting another banked reset and an apology email. Banked-only events do not turn Tibo Time on.",
+  "last_checked_at": "2026-09-09T20:41:00Z",
+  "last_changed_at": "2026-09-09T18:23:34Z",
+  "source": {
+    "post_id": "2097752790177370535",
+    "url": "https://x.com/thsottiaux/status/2097752790177370535",
+    "author": "thsottiaux",
+    "published_at": "2026-09-09T18:23:34Z",
+    "excerpt": "There was a bit of a kerfuffle this morning with some banked resets not fully applying when used in ChatGPT Work and Codex. Everyone who used one in the affected time window is getting another one and an email to apologize."
+  },
+  "timing_phrase": null,
+  "affected_scope": "ChatGPT Work and Codex users who used a banked reset in the affected morning window",
+  "confidence": "high",
+  "note": "Public monitor only. Not per-account confirmation."
+}

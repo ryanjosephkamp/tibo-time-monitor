@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tibo Time Monitor</title>
+  <meta name="description" content="Public Tibo Time status for Codex and ChatGPT Work usage resets.">
+  <link rel="alternate" type="application/rss+xml" title="Tibo Time Monitor" href="./feed.xml">
+  <style>
+    :root {
+      --bg: #101114;
+      --card: #1a1c22;
+      --text: #f3f4f6;
+      --muted: #9aa3b2;
+      --line: #2a2e38;
+      --inactive: #7a8899;
+      --active: #e8b84a;
+      --uncertain: #d18a5b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.1rem 3rem;
+    }
+    h1 { font-size: 1.7rem; margin: 0 0 0.35rem; }
+    .lede { color: var(--muted); margin: 0 0 1.25rem; }
+    .banner {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      background: var(--card);
+      margin-bottom: 1.25rem;
+    }
+    .state {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--inactive);
+      margin: 0 0 0.35rem;
+    }
+    .banner.active .state { color: var(--active); }
+    .banner.uncertain .state { color: var(--uncertain); }
+    .headline { font-size: 1.25rem; margin: 0 0 0.5rem; }
+    .summary, .meta { margin: 0.35rem 0; }
+    .meta { color: var(--muted); font-size: 0.92rem; }
+    a { color: #d7dee8; }
+    .embed { margin: 1rem 0 0; min-height: 1px; }
+    .links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
+    footer { color: var(--muted); font-size: 0.88rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tibo Time Monitor</h1>
+    <p class="lede">Public signal for the Codex / ChatGPT Work reset-rush window. Not your account bar.</p>
+    <section id="banner" class="banner">
+      <p class="state" id="state">Loading</p>
+      <h2 class="headline" id="headline">Checking latest status</h2>
+      <p class="summary" id="summary"></p>
+      <p class="meta" id="meta"></p>
+      <p class="meta" id="checked"></p>
+      <p class="meta" id="source"></p>
+      <div class="embed" id="embed"></div>
+    </section>
+    <nav class="links">
+      <a href="./feed.xml">RSS</a>
+      <a href="./status.json">status.json</a>
+      <a href="https://x.com/thsottiaux">@thsottiaux</a>
+      <a href="https://github.com/ryanjosephkamp/tibo-time-monitor">source</a>
+    </nav>
+    <footer>
+      Updated hourly from public X posts. Banked-only credits do not turn Tibo Time on.
+      A landing report without account proof is marked uncertain.
+    </footer>
+  </main>
+  <script>
+    const stateLabel = {
+      ACTIVE: "Tibo Time is on",
+      INACTIVE: "Tibo Time is off",
+      UNCERTAIN: "Tibo Time is uncertain"
+    };
+    function fmt(iso) {
+      if (!iso) return "unknown";
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return iso;
+      return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    }
+    fetch("./status.json?" + Date.now())
+      .then((r) => r.json())
+      .then((s) => {
+        const banner = document.getElementById("banner");
+        banner.classList.remove("active", "uncertain");
+        if (s.tibo_time === "ACTIVE") banner.classList.add("active");
+        if (s.tibo_time === "UNCERTAIN") banner.classList.add("uncertain");
+        document.getElementById("state").textContent = stateLabel[s.tibo_time] || s.tibo_time;
+        document.getElementById("headline").textContent = s.headline || "No current event";
+        document.getElementById("summary").textContent = s.summary || "";
+        const bits = [];
+        if (s.event_kind) bits.push(s.event_kind);
+        if (s.event_stage) bits.push(s.event_stage);
+        if (s.affected_scope) bits.push(s.affected_scope);
+        document.getElementById("meta").textContent = bits.join(" · ");
+        document.getElementById("checked").textContent = "Last checked " + fmt(s.last_checked_at);
+        const src = s.source || {};
+        const sourceEl = document.getElementById("source");
+        if (src.url) {
+          sourceEl.innerHTML = "Source: <a href=\"" + src.url + "\">original post</a>";
+        } else {
+          sourceEl.textContent = "";
+        }
+        const embed = document.getElementById("embed");
+        embed.innerHTML = "";
+        if (src.url) {
+          const bq = document.createElement("blockquote");
+          bq.className = "twitter-tweet";
+          bq.setAttribute("data-theme", "dark");
+          const a = document.createElement("a");
+          a.href = src.url;
+          a.textContent = src.excerpt || src.url;
+          bq.appendChild(a);
+          embed.appendChild(bq);
+          const script = document.createElement("script");
+          script.async = true;
+          script.src = "https://platform.twitter.com/widgets.js";
+          embed.appendChild(script);
+        }
+      })
+      .catch(() => {
+        document.getElementById("state").textContent = "Status unavailable";
+        document.getElementById("headline").textContent = "Could not load status.json";
+      });
+  </script>
+</body>
+</html>
