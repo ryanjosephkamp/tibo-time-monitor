@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
-  "tibo_time": "INACTIVE",
-  "event_kind": "banked_credit",
-  "event_stage": "source_completed",
-  "headline": "Banked resets re-issued after a morning apply failure",
-  "summary": "Tibo said some banked resets did not fully apply this morning on ChatGPT Work and Codex. Affected users are getting another banked reset and an apology email. Banked-only events do not turn Tibo Time on.",
-  "last_checked_at": "2026-09-12T03:06:38Z",
-  "last_changed_at": "2026-09-09T18:23:34Z",
+  "tibo_time": "ACTIVE",
+  "event_kind": "automatic_global_reset",
+  "event_stage": "scheduled",
+  "headline": "Astra usage reset landing by midnight today",
+  "summary": "Tibo announced a reset for Astra users, landing by midnight today, alongside quality fixes for skills, context management, and engines. This is an automatic/global usage reset signal.",
+  "last_checked_at": "2026-09-12T04:14:25Z",
+  "last_changed_at": "2026-09-12T03:20:36Z",
   "source": {
-    "post_id": "2097752790177370535",
-    "url": "https://x.com/thsottiaux/status/2097752790177370535",
+    "post_id": "2098612714704891959",
+    "url": "https://x.com/thsottiaux/status/2098612714704891959",
     "author": "thsottiaux",
-    "published_at": "2026-09-09T18:23:34Z",
-    "excerpt": "There was a bit of a kerfuffle this morning with some banked resets not fully applying when used in ChatGPT Work and Codex. Everyone who used one in the affected time window is getting another one and an email to apologize."
+    "published_at": "2026-09-12T03:20:36Z",
+    "excerpt": "And of course, a reset is also landing by midnight today."
   },
-  "timing_phrase": null,
-  "affected_scope": "ChatGPT Work and Codex users who used a banked reset in the affected morning window",
+  "timing_phrase": "by midnight today",
+  "affected_scope": "Astra users (Codex / ChatGPT Work)",
   "confidence": "high",
   "note": "Public monitor only. Not per-account confirmation."
 }

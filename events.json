@@ -2,6 +2,17 @@
   "schema_version": 1,
   "events": [
     {
+      "id": "2098612714704891959",
+      "tibo_time": "ACTIVE",
+      "event_kind": "automatic_global_reset",
+      "event_stage": "scheduled",
+      "headline": "Astra usage reset landing by midnight today",
+      "summary": "Tibo announced a reset for Astra users, landing by midnight today, alongside quality fixes for skills, context management, and engines.",
+      "url": "https://x.com/thsottiaux/status/2098612714704891959",
+      "published_at": "2026-09-12T03:20:36Z",
+      "observed_at": "2026-09-12T04:14:25Z"
+    },
+    {
       "id": "2097752790177370535",
       "tibo_time": "INACTIVE",
       "event_kind": "banked_credit",
