@@ -2,6 +2,17 @@
   "schema_version": 1,
   "events": [
     {
+      "id": "2098685367058612394",
+      "tibo_time": "UNCERTAIN",
+      "event_kind": "automatic_global_reset",
+      "event_stage": "source_completed",
+      "headline": "Astra usage reset fully propagated",
+      "summary": "Tibo confirmed the Astra usage reset has fully propagated: \"Reset all propagated. Sweet dreams.\" This follows the earlier announcement of a reset landing by midnight.",
+      "url": "https://x.com/thsottiaux/status/2098685367058612394",
+      "published_at": "2026-09-12T08:09:17Z",
+      "observed_at": "2026-09-12T09:10:15Z"
+    },
+    {
       "id": "2098612714704891959",
       "tibo_time": "ACTIVE",
       "event_kind": "automatic_global_reset",

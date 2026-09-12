@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "tibo_time": "ACTIVE",
+  "tibo_time": "UNCERTAIN",
   "event_kind": "automatic_global_reset",
-  "event_stage": "scheduled",
-  "headline": "Astra usage reset landing by midnight today",
-  "summary": "Tibo announced a reset for Astra users, landing by midnight today, alongside quality fixes for skills, context management, and engines. This is an automatic/global usage reset signal.",
-  "last_checked_at": "2026-09-12T08:01:29Z",
-  "last_changed_at": "2026-09-12T03:20:36Z",
+  "event_stage": "source_completed",
+  "headline": "Astra usage reset fully propagated",
+  "summary": "Tibo confirmed the Astra usage reset has fully propagated: \"Reset all propagated. Sweet dreams.\" This follows the earlier announcement of a reset landing by midnight.",
+  "last_checked_at": "2026-09-12T09:10:15Z",
+  "last_changed_at": "2026-09-12T08:09:17Z",
   "source": {
-    "post_id": "2098612714704891959",
-    "url": "https://x.com/thsottiaux/status/2098612714704891959",
+    "post_id": "2098685367058612394",
+    "url": "https://x.com/thsottiaux/status/2098685367058612394",
     "author": "thsottiaux",
-    "published_at": "2026-09-12T03:20:36Z",
-    "excerpt": "And of course, a reset is also landing by midnight today."
+    "published_at": "2026-09-12T08:09:17Z",
+    "excerpt": "Reset all propagated. Sweet dreams."
   },
-  "timing_phrase": "by midnight today",
+  "timing_phrase": "all propagated",
   "affected_scope": "Astra users (Codex / ChatGPT Work)",
   "confidence": "high",
   "note": "Public monitor only. Not per-account confirmation."
